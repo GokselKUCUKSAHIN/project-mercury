@@ -14,6 +14,7 @@ FROM mercury.product p
     INNER JOIN mercury.personnel_table knitPer1 on knit.personnel1_id = knitPer1.id
 	INNER JOIN mercury.personnel_table knitPer2 on knit.personnel2_id = knitPer2.id
 	INNER JOIN mercury.machine_table knitMac on knit.machine_id = knitMac.id
+
 ;
 
 SELECT p.id, 
@@ -33,10 +34,18 @@ FROM mercury.product p
 select * from product;
 
 
+
 SELECT p.id, 
-cutPer1.name as 'Cut Personnel 1 name', cutPer2.name as 'Cut Personnel 2 name', cut.processDate as 'Cut time'
+cutPer1.name as 'Cut Personnel 1 name', cutPer1.surname as 'Cut Personnel 1 surname',cutPer2.name as 'Cut Personnel 2 name', cutPer2.surname as 'Cut Personnel 2 surname',cut.processDate as 'Cut time'
 FROM mercury.product p
 	INNER JOIN mercury.cut_table cut on cut.id = p.cut_id
 	INNER JOIN mercury.personnel_table cutPer1 on cut.personnel1_id = cutPer1.id
     INNER JOIN mercury.personnel_table cutPer2 on cut.personnel2_id = cutPer2.id
 ;
+
+
+
+
+
+
+alter table mercury.personnel_table change `surnamee` `surname` varchar(40) not null; /*re-name column*/
