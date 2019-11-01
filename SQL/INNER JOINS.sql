@@ -1,4 +1,4 @@
-SELECT p.id, 
+SELECT mercury.p.id, 
 cutPer1.name as 'Cut Personnel 1 name', cutPer2.name as 'Cut Personnel 2 name', cut.processDate as 'Cut time',
 sewPer1.name as 'Sew Personnel 1 name', sewMac.name as 'Sew Machine Name', sewMac.brand as 'Sew Machine Brand',
 sew.processDate as 'Sew time', knitPer1.name as 'Knit Personnel 1 name',knitPer2.name as 'Knit Personnel 2 name',
@@ -14,7 +14,7 @@ FROM mercury.product p
     INNER JOIN mercury.personnel_table knitPer1 on knit.personnel1_id = knitPer1.id
 	INNER JOIN mercury.personnel_table knitPer2 on knit.personnel2_id = knitPer2.id
 	INNER JOIN mercury.machine_table knitMac on knit.machine_id = knitMac.id
-
+	order by p.id asc
 ;
 
 SELECT p.id, 
@@ -31,6 +31,7 @@ FROM mercury.product p
 	INNER JOIN mercury.personnel_table knitPer2 on knit.personnel2_id = knitPer2.id
 	INNER JOIN mercury.machine_table knitMac on knit.machine_id = knitMac.id
 ;
+use mercury;
 select * from product;
 
 
