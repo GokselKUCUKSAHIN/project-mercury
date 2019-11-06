@@ -10,7 +10,7 @@ public class Main
         {
             System.out.println("JCode = '" + jCode(Utils.getRandomInt(100000, 999999)) + "'");
         }*/
-
+        System.out.println(isGenuineJCode("Jellybean"));
 
         Scanner scanner = new Scanner(System.in);
         int val = 0;
@@ -73,11 +73,20 @@ public class Main
             {
                 // if Starts with 'J'
                 int sum = 0;
-                for (int i = 1; i < code.length() - 2; i++)
+                try
                 {
-                    sum += Integer.parseInt(Character.toString(code.charAt(i))); // check sum
+                    // it can be like 'Jellybean' its 9 digit and starting with J but not a JCode;
+                    for (int i = 1; i < code.length() - 2; i++)
+                    {
+                        sum += Integer.parseInt(Character.toString(code.charAt(i))); // check sum
+                    }
+                    return sum == Integer.parseInt(code.substring(7, 9)); // last 2 digits is same as check sum
                 }
-                return sum == Integer.parseInt(code.substring(7, 9)); // last 2 digits is same as check sum
+                catch (Exception ex)
+                {
+                    // then its not genuine
+                    return  false;
+                }
             } else
             {
                 // Must be J if isn't it's not genuine
