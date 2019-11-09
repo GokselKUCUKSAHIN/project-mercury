@@ -1,38 +1,7 @@
 import java.util.Scanner;
 
-public class Main
+public class JCode
 {
-
-    public static void main(String[] args)
-    {
-
-        /*for (int i = 0; i < 20; i++)
-        {
-            System.out.println("JCode = '" + jCode(Utils.getRandomInt(100000, 999999)) + "'");
-        }*/
-        System.out.println(isGenuineJCode("Jellybean"));
-
-        Scanner scanner = new Scanner(System.in);
-        int val = 0;
-        while (true)
-        {
-            val = 0;
-            System.out.print("Enter a value->");
-            try
-            {
-                val = Integer.parseInt(scanner.nextLine());
-            }
-            catch (Exception ex)
-            {
-                System.out.println("err");
-                val = 0;
-            }
-            String code = jCode(val);
-            System.out.println("JCode = '" + code + "'");
-            System.out.println(isGenuineJCode(code));
-        }
-    }
-
     private static String jCode(int seed)
     {
         StringBuilder sb = new StringBuilder(9);
