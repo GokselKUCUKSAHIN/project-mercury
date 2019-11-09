@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class JCode
 {
-    private static String jCode(int seed)
+    private static String GenerateJCode(int seed)
     {
         StringBuilder sb = new StringBuilder(9);
         sb.append('J'); // Always starts with J
