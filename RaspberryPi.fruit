@@ -1,0 +1,4 @@
+String url = "jdbc:mysql://192.168.1.245:3306/fruitdb";
+Properties connProps = new Properties();
+connProps.setProperty("user", "jelly");
+connProps.setProperty("password", "jelly");
