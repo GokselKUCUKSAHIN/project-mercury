@@ -1,6 +1,6 @@
 create table couch_table(
 	id int primary key not null auto_increment,
-    jcode varchar(9) not null,
+    jcode varchar(9) not null default 'J00000000',
     cut_fabric_id int not null default 1,
     sew_fabric_id int not null default 1,
     quilt_fabric_id int not null default 1,
