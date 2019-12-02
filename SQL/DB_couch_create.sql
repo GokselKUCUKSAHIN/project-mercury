@@ -34,3 +34,5 @@ create table couch_table(
 );
 
 select * from couch_table;
+select * from couch_cut_fabric_table;
+select * from couch_strip_cut_harboard_table;
