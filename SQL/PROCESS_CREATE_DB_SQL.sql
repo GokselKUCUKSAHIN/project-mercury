@@ -89,15 +89,6 @@ create table couch_casing_table(
     foreign key (personnel2_id) references personnel_table(id)
 );
 
-create table couch_frame_cut_table(
-	id int primary key not null auto_increment,
-    personnel1_id int null default 1,
-    personnel2_id int null default 1,
-    processDate datetime not null,
-    foreign key (personnel1_id) references personnel_table(id),
-    foreign key (personnel2_id) references personnel_table(id)
-);
-
 create table couch_rubber_pile_table(
 	id int primary key not null auto_increment,
     personnel1_id int null default 1,
