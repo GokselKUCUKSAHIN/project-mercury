@@ -1,5 +1,5 @@
+import javax.xml.transform.Result;
 import java.sql.*;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Properties;
 
@@ -55,18 +55,55 @@ public class DBO
         checkDB();
         //
         ArrayList<String> str = new ArrayList<>();
-        String query = "select * from product;";
+        String query = "select * from mercury.couch_table;"; //"select * from product;";
+
         ResultSet result = statement.executeQuery(query);
+        ResultSetMetaData rsmd = result.getMetaData();
+
         while (result.next())
         {
             StringBuilder sb = new StringBuilder();
-            for (int i = 1; i < 5; i++)
+            for (int i = 1; i <= rsmd.getColumnCount(); i++)
             {
-                sb.append(result.getString(i));
+                sb.append(result.getString(i) + " \n");
             }
             str.add(sb.toString());
         }
         return str;
     }
 
+    public static String getColumnName(int colId) throws SQLException
+    {
+        checkDB();
+        //
+        String query ="CALL SelectCouch(0);";
+        ResultSet result = statement.executeQuery(query);
+        ResultSetMetaData rsmd = result.getMetaData();
+        return rsmd.getColumnName(colId);
+    }
+    public static int findFirstNull(int id) throws SQLException
+    {
+        checkDB();
+        //
+        String query = String.format("CALL SelectCouch(%d);", id);
+        ResultSet result = statement.executeQuery(query);
+        ResultSetMetaData rsmd = result.getMetaData();
+
+        if (result.next())
+        {
+            for (int i = 3; i <= rsmd.getColumnCount(); i++)
+            {
+                if (result.getInt(i) == 1)
+                {
+                    // found empty field (null)
+
+                    return i;
+                }
+            }
+            return 0; // found but no empty fields
+        } else
+        {
+            return -1; // there is no rows accourding this id
+        }
+    }
 }
