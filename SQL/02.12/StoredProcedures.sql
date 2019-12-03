@@ -99,7 +99,7 @@ DELIMITER ;
 DELIMITER //
 CREATE PROCEDURE UpdateRubberPile(IN couch_id int, IN p1id int, IN p2id int, IN p3id int, IN p4id int)
 BEGIN
-    insert into mercury.couch_rubber_pile_table values (null, p1id, p2id, p3id, now());
+    insert into mercury.couch_rubber_pile_table values (null, p1id, p2id, p3id, p4id, now());
     update mercury.couch_table set couch_table.rubber_pile_id = last_insert_id() where id = couch_id;
 END //
 DELIMITER ;
