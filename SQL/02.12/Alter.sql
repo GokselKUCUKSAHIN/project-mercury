@@ -1,0 +1,1 @@
+ALTER TABLE mercury.couch_table AUTO_INCREMENT = 1;
