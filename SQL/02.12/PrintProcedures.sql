@@ -154,32 +154,6 @@ END //
 DELIMITER ;
 
 DELIMITER //
-CREATE PROCEDURE PrintFurnishFabric(IN couch_id int)
-BEGIN
-select
-	furnishPer1.name as 'Personnel 1 name',
-    furnishPer1.surname as 'Personnel 1 surname',
-    furnishPer2.name as 'Personnel 2 name',
-    furnishPer2.surname as 'Personnel 2 surname',
-    furnishPer3.name as 'Personnel 3 name',
-    furnishPer3.surname as 'Personnel 4 surname',
-    furnish.processDate as 'Furnish Fabric dateTime'
-from 
-	mercury.couch_table ct
-inner join 
-	mercury.couch_furnish_fabric_table furnish on furnish.id = ct.furnish_fabric_id
-inner join
-	mercury.personnel_table furnishPer1 on furnishPer1.id = furnish.personnel1_id
-inner join
-	mercury.personnel_table furnishPer2 on furnishPer2.id = furnish.personnel2_id
-inner join
-	mercury.personnel_table furnishPer3 on furnishPer3.id = furnish.personnel3_id
-where
-	ct.id = couch_id;
-END //
-DELIMITER ;
-
-DELIMITER //
 CREATE PROCEDURE PrintLCutHB(IN couch_id int)
 BEGIN
 select
