@@ -128,13 +128,6 @@ END //
 DELIMITER ;
 
 DELIMITER //
-CREATE PROCEDURE SelectCouch(IN couch_id int)
-BEGIN
-    select * from mercury.couch_table where id = couch_id;
-END //
-DELIMITER ;
-
-DELIMITER //
 CREATE PROCEDURE CreateNewCouch(IN jCode varchar(9))
 BEGIN
     insert into mercury.couch_table (id, jcode) values (null, jCode);
