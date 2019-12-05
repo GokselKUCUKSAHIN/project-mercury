@@ -154,28 +154,6 @@ END //
 DELIMITER ;
 
 DELIMITER //
-CREATE PROCEDURE PrintFrameCut(IN couch_id int)
-BEGIN
-select
-	cutFramePer1.name as 'Personnel 1 name',
-    cutFramePer1.surname as 'Personnel 1 surname',
-    cutFramePer2.name as 'Personnel 2 name',
-    cutFramePer2.surname as 'Personnel 2 surname',
-    frameCut.processDate as 'Cut Frame dateTime'
-from 
-	mercury.couch_table ct
-inner join 
-	mercury.couch_frame_cut_table frameCut on frameCut.id = ct.frame_cut_id
-inner join
-	mercury.personnel_table cutFramePer1 on cutFramePer1.id = frameCut.personnel1_id
-inner join
-	mercury.personnel_table cutFramePer2 on cutFramePer2.id = frameCut.personnel2_id
-where
-	ct.id = couch_id;
-END //
-DELIMITER ;
-
-DELIMITER //
 CREATE PROCEDURE PrintFurnishFabric(IN couch_id int)
 BEGIN
 select
