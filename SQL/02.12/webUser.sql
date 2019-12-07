@@ -25,7 +25,7 @@ DELIMITER //
 CREATE PROCEDURE DeleteWebUser(IN userName varchar(20))
 BEGIN
 	set @var := (select id from mercury.web_user_table where mercury.web_user_table.username = userName);
-    delete from  mercury.web_user_table where mercury.web_user_table.id = @var;
+    	delete from  mercury.web_user_table where mercury.web_user_table.id = @var;
 END //
 DELIMITER ;
 
@@ -33,6 +33,5 @@ DELIMITER ;
 DELIMITER // 
 CREATE PROCEDURE CheckWebPassword(IN userName varchar(20), IN passWord varchar(20))
 BEGIN
-		select (id) from mercury.web_user_table where web_user_table.username = userName and web_user_table.password = passWord;
-END //
+	select id, username from mercury.web_user_table where web_user_table.username = userName and web_user_table.password = passWord;
 DELIMITER ;
