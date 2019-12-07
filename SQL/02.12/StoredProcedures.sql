@@ -141,3 +141,11 @@ BEGIN
 	select couch_table.id from mercury.couch_table where jcode = jCode;
 END //
 DELIMITER ;
+
+DELIMITER //
+CREATE PROCEDURE DeleteCouch(IN couch_id int)
+BEGIN
+	delete from mercury.couch_table where id = couch_id;
+END //
+DELIMITER ;
+
