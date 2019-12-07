@@ -1,1 +1,0 @@
-insert into test values (null,'1998-7-9 9:1:3');
