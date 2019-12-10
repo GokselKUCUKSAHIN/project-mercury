@@ -34,4 +34,5 @@ DELIMITER //
 CREATE PROCEDURE CheckWebPassword(IN userName varchar(50), IN passWord varchar(50))
 BEGIN
 	select id, username from mercury.web_user_table where web_user_table.username = userName and web_user_table.password = passWord;
+END //
 DELIMITER ;
