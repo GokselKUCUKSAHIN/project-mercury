@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".SearchProduct">
+
+    <EditText
+            android:id="@+id/jcodeText"
+            android:layout_width="248dp"
+            android:layout_height="41dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:hint="Enter JCode"
+            android:inputType="number"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+            android:id="@+id/btnGo"
+            android:layout_width="70dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="16dp"
+            android:text="go"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/jcodeText"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+            android:layout_width="403dp"
+            android:layout_height="518dp"
+            android:layout_marginTop="72dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <Button
+                    android:id="@+id/btnCutFabric"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Cut Fabric Proccess" />
+
+            <Button
+                    android:id="@+id/btnSewFabric"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sew Fabric Proccess" />
+
+            <Button
+                    android:id="@+id/btnQuiltFabric"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Quilt Fabric Proccess" />
+
+            <Button
+                    android:id="@+id/btnCutHB"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Hardboard Cut Process" />
+
+            <Button
+                    android:id="@+id/btnStrip"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Hardboard Strip Cut Process" />
+
+            <Button
+                    android:id="@+id/btnLCut"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Hardboard L Cut Process" />
+
+            <Button
+                    android:id="@+id/btnDrill"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Hardboard Drill  Process" />
+
+            <Button
+                    android:id="@+id/btnCase"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Casing Process" />
+
+            <Button
+                    android:id="@+id/btnFrame"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Front Frame Cut Process" />
+
+            <Button
+                    android:id="@+id/btnRubber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Rubber Pile Process" />
+
+            <Button
+                    android:id="@+id/btnSponge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Whitting Sponge Process" />
+
+            <Button
+                    android:id="@+id/btnWrapping"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Wrapping Cardboard" />
+
+            <Button
+                    android:id="@+id/btnDress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Dressing Fabric Process" />
+
+            <Button
+                    android:id="@+id/btnFurnish"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Furnish Fabric Process" />
+
+            <Button
+                    android:id="@+id/btnPackage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Package Process" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

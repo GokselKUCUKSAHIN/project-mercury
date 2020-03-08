@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ProjectMercury</string>
+    <string name="login">LOGIN</string>
+    <string name="signup">SIGNUP</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="enter_username">Enter Username</string>
+    <string name="logo">Logo</string>
+</resources>
